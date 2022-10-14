@@ -16,7 +16,9 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
+a {
+    text-decoration: none;
+}
 ul {
     list-style: none;
 }
@@ -32,15 +34,14 @@ footer{
 }
 
 .logo__header{    
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Nabla', cursive;
 }
 
 /* HEADER*/
 /* MENU */
 .lista__menu{
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding: 0 2rem;
     margin: 0.2rem;
     display: inline-block;
     font-size: 1.2rem;
@@ -100,7 +101,7 @@ footer{
     transition: transform 0.5s;
 }
 
-.principal_scroll {
+.principal__scroll {
     display: flex;
     grid-area: scroll;
     align-items: end;
@@ -320,30 +321,21 @@ footer{
 .tema1 {
     background-color: #202020;
     color: #d6d6d7;
-    display: flex;
-    flex-direction: row-reverse;
     padding: 4rem;
-    height: 60vh;
-    align-items: center;
+    text-align: center;
+    margin: 0;
+    max-width: 100vw
 }
 .tema2 {
     background-color: #d6d6d7;
     color: #202020;
-    display: flex;
     padding: 4rem;
-    height: 60vh;
-    align-items: center;
+    text-align: center;
+    margin: 0;
+    max-width: 100vw
 }
 .tema1__historia {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding-inline: 2rem;
-}
-.tema1__parrafo {
-    text-align: center;
-    padding-top: 3rem;
 }
 iframe {
     width: 50vw;
@@ -390,8 +382,7 @@ iframe {
 .contacto {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    align-items: center;    
-    height: 75 vh;
+    align-items: center;
     background-color: #202020;
     color: #ffee32;
 }
@@ -401,12 +392,10 @@ iframe {
     padding: 1rem;
 }
 .contacto__cuadro {
-    width: 45vw;
-    height: 55vh;
-    min-width: 45vw;
-    min-height: 55vh;
-    max-width: 45vw;
-    max-height: 55vh;
+    min-width: 400px;
+    min-height:400px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 /* FIN CONTACTAME */
@@ -448,6 +437,54 @@ img.aos-init.aos-animate:hover {
 
 /* RESPONSIVE */
 
+@media screen and (max-width:1024px){
+    /* HEADER */
+    .logo__header {
+        font-size: 2.5rem;
+    }
+    .lista__menu {
+        padding: 0 0.3rem;
+        font-size: 1.1rem;
+    }
+
+} 
+
+@media screen and (max-width:768px){
+    /* HEADER */
+    header {
+        padding-inline: 1.1rem;
+    }
+    .logo__header {
+        font-size: 2rem;
+    }
+    ol, ul {
+        padding-left: 0;
+    }
+    /* PRINCIPAL */
+    .principal__scroll {
+        font-size: 0.7rem;
+    }
+    .principal__scroll__p{
+        margin-bottom: 0;
+    }
+     /*EVENTOS  */
+     .eventos__horario{
+        text-align: center;
+     }
+     /* MULTIMEDIA */
+     .multimedia {
+        padding: 1.1rem
+    }
+
+     /* CONTACTO */
+     .contacto__cuadro {
+        min-width: 300px;
+        min-height: 300px;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
 @media screen and (max-width:320px){
     /* HEADER */
     header{
@@ -477,6 +514,9 @@ img.aos-init.aos-animate:hover {
     .lista__menu--actual {
         background-color: #202020;
     }
+    ol, ul {
+        padding-left: 0;
+    }
     /* FIN HEADER */
 
     /* PRINCIPAL */
@@ -503,6 +543,13 @@ img.aos-init.aos-animate:hover {
         padding-inline: 1rem;
         display: flex;
         flex-direction: column;
+    }
+    .videoclip{
+        height: auto;
+    }
+    .videoclip__yt {
+        width: 100vw;
+        height: auto;
     }
     .discografia__seccion{
         display: flex;
@@ -547,7 +594,29 @@ img.aos-init.aos-animate:hover {
         font-size: 1.2rem;
     }
     /* FIN INDEX SHOWS */
+    /* MULTIMEDIA  */
+    .multimedia {
+        padding: 1rem
+    }
 
+    /* CONTACTO */
+    .contacto {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-inline: 1rem;
+    }
+    .contacto__formulario{
+        padding-inline: 1rem;
+    }
+    .contacto__mapa {
+        width: 250px;
+    }
+    .contacto__cuadro {
+        max-width: 250px;
+        min-width: 250px;
+        min-height: 200px;
+        max-height: 200px;
+    }
     /* FOOTER */
     footer{
         padding-inline: 1rem;
@@ -556,15 +625,10 @@ img.aos-init.aos-animate:hover {
     }
     .piedepagina p {
         font-size: 1.3rem;
+        margin-bottom: 0;
     }
 }
 
-@media screen and (max-width:768px){
 
-}
-
-@media screen and (max-width:1024px){
-
-} 
 
 /* FIN RESPONSIVE */
